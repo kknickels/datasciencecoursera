@@ -1,7 +1,7 @@
 
-## creates a matrix, defines functions and associates them with the matrix environment
-## so that once the inverse of the matrix is calculated it is cached and 
-## and can be referenced in subsequent code rather than calculating again
+## takes matrix, defines functions and associates them with the matrix environment
+## so that once the inverse of the matrix is computed it is cached and 
+## and can be referenced in subsequent code rather than computing again
 
 ## takes the matrix as input and associates the list of functions
 makeCacheMatrix <- function(x = matrix()) {
@@ -37,9 +37,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## looks for inverse of matrix returned my makeCacheMatrix and compares matrix
-## if matrix is unchanged and inverse previously computed, it returns cached inverse 
-## otherwise, computes and stores the inverse
+## function looks for inverse of matrix returned by makeCacheMatrix 
+## if inverse was previously computed (and matrix was unchanged) it returns the cached inverse 
+## otherwise, it computes and stores the inverse
 
 cacheSolve <- function(x, ...) {
   
@@ -64,6 +64,6 @@ cacheSolve <- function(x, ...) {
   # passes the newly computed inverse to the setinverse function to be cached
   x$setinverse(mi)
   
-  # returns the inverse
+  # returns the newly computed inverse
   mi
 }
