@@ -1,7 +1,8 @@
 
-## takes matrix, defines functions and associates them with the matrix environment
-## so that once the inverse of the matrix is computed it is cached and 
-## and can be referenced in subsequent code rather than computing again
+## two functions - first one takes matrix, defines functions and associates 
+## them with the matrix environment so that once the inverse of the matrix 
+## is computed and cached by the second function it can subsequently be referenced 
+## and pulled from cache and will be computed again only if the matrix has changed 
 
 ## takes the matrix as input and associates the list of functions
 makeCacheMatrix <- function(x = matrix()) {
